@@ -1,0 +1,23 @@
+<!--第一章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冲突解决1</title>
+    <script src="lib/prototype.js" type="text/javascript"></script>
+    <script src="../../src/jquery-3.1.1.js" type="text/javascript"></script>
+</head>
+<body>
+<p id="pp">Test-prototype(将被隐藏)</p>
+<p>Test-jQuery(将被绑定单击事件)</p>
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(function(){
+        jQuery("p").click(function(){
+            alert(jQuery(this).text());
+        })
+    })
+    $("pp").style.display = "none";//使用prototype.js隐藏元素
+</script>
+</body>
+</html>

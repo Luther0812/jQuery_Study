@@ -1,0 +1,25 @@
+<!--第一章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>论坛注册——DOM方式</title>
+    <script src="../../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $cr = $("#cr");
+            var cr = $cr.get(0);
+            $cr.click(function(){
+                if(cr.checked){
+                    alert("感谢你的支持，可以继续操作！");
+                }else{
+                    alert("error");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="cr" /><label for="cr">我已经阅读了上面的制度</label>
+</body>
+</html>
