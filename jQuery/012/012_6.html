@@ -1,0 +1,80 @@
+<!--第二章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <script src="../../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="lib/assist.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("div[title]").css("background","#bfa");
+            });
+            $("#btn2").click(function(){
+                $("div[title=test]").css("background","#bfa");
+            });
+            $("#btn3").click(function(){
+                $("div[title!='test']").css("background","#bfa");
+            });
+            $("#btn4").click(function(){
+                $("div[title^=te]").css("background","#bfa");
+            });
+            $("#btn5").click(function(){
+                $("div[title$=est]").css("background","#bfa");
+            });
+            $("#btn6").click(function(){
+                $("div[title*=es]").css("background","#bfa");
+            });
+            $("#btn7").click(function(){
+                $("div[id][title*=es]").css("background","#bfa");
+            });
+        })
+    </script>
+</head>
+<body>
+<h3>属性选择器</h3>
+<button id="reset">手动重置页面元素</button>
+<br/>
+<br/>
+<input type="button" value="选取含有属性title的div元素" id="btn1" />
+<input type="button" value="选取属性title等于test的div元素" id="btn2" />
+<input type="button" value="选取属性title不等于test的div元素（没有属性的div也被选中）" id="btn3" />
+<input type="button" value="选取属性title以te开头的div元素" id="btn4" />
+<input type="button" value="选取属性title以est结尾的div元素" id="btn5" />
+<input type="button" value="选取属性title含有es的div元素" id="btn6" />
+<input type="button" value="组合属性选择器，首选选取属性id的div元素，然后在结果中选取属性title含有es的元素" id="btn7" />
+<br/>
+<br/>
+<div class="one" id="one">
+    id为one，class为one的div
+    <div class="mini">class为mini</div>
+</div>
+<div class="one" id="two" title="test">
+    id为two，class为one，title为test的div
+    <div class="mini" title="other">class为mini，title为other</div>
+    <div class="mini" title="test">class为mini，title为test</div>
+</div>
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"></div>
+</div>
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini" title="test">class为mini，title为test</div>
+</div>
+<div style="display:none" class="none">
+    style的display为none的div
+</div>
+<div class="hide">class为hide的div</div>
+<div>
+    包含input的type为hidden的div<input type="hidden" size="8" />
+</div>
+<span id="mover">正在执行动画的span元素</span>
+</body>
+</html>

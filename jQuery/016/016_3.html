@@ -1,0 +1,29 @@
+<!--第二章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器中的空格</title>
+    <script src="../../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $t_a = $(".test :hidden");
+            var $t_b = $(".test:hidden");
+            var len_a = $t_a.length;
+            var len_b = $t_b.length;
+            $("<p>$('.test :hidden')的长度为" + len_a + "</p>").appendTo("body");
+            $("<p>$('.test:hidden')的长度为" + len_b + "</p>").appendTo("body");
+        })
+    </script>
+</head>
+<body>
+<div class="test">
+    <div style="display: none;">aa</div>
+    <div style="display: none;">bb</div>
+    <div style="display: none;">cc</div>
+    <div class="test" style="display: none">dd</div>
+</div>
+<div class="test" style="display: none">ee</div>
+<div class="test" style="display: none">ff</div>
+</body>
+</html>

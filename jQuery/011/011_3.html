@@ -1,0 +1,31 @@
+<!--第二章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3个JavaScript例子</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+                var arrays = new Array();
+                var items = document.getElementsByName("check");
+                for(var i = 0; i < items.length; i++){
+                    if(items[i].checked){
+                        arrays.push(items[i].value);
+                    }
+                }
+                alert("选中的个数为：" + arrays.length);
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="#">
+    <input type="checkbox" value="1" name="check" checked="checked" />
+    <input type="checkbox" value="1" name="check" />
+    <input type="checkbox" value="1" name="check" checked="checked" />
+    <input type="button" value="你选中的个数" id="btn" />
+</form>
+</body>
+</html>
