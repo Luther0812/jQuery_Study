@@ -1,0 +1,58 @@
+<!--第三章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字提示2</title>
+    <style type="text/css">
+        body{
+            margin:0;
+            padding:40px;
+            background:#fff;
+            font:80% Arial, Helvetica, sans-serif;
+            color:#555;
+            line-height:180%;
+        }
+        p{
+            clear:both;
+            margin:0;
+            padding:.5em 0;
+        }
+        /* tooltip */
+        #tooltip{
+            position:absolute;
+            border:1px solid #333;
+            background:#f7f5d1;
+            padding:1px;
+            color:#333;
+            display:none;
+        }
+    </style>
+    <script src="../../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var x = 10;
+            var y = 20;
+            $("a.tooltip").mouseover(function(e){
+                this.myTitle = this.title;
+                this.title = "";
+                var tooltip = "<div id='tooltip'>" + this.myTitle + "<\/div>";
+                $("body").append(tooltip);
+                $("#tooltip").css({
+                    "top": e.pageY + "px",
+                    "left": e.pageX + "px"
+                }).show("fast");
+            }).mouseout(function(){
+                this.title = this.myTitle;
+                $("#tooltip").remove();
+            })
+        })
+    </script>
+</head>
+<body>
+<p><a href="#" class="tooltip" title="这是我的超链接提示1.">提示1.</a></p>
+<p><a href="#" class="tooltip" title="这是我的超链接提示2.">提示2.</a></p>
+<p><a href="#" title="这是自带提示1.">自带提示1.</a></p>
+<p><a href="#" title="这是自带提示2.">自带提示2.</a></p>
+</body>
+</html>

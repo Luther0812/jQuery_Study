@@ -1,0 +1,30 @@
+<!--第三章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" type="text/html" charset="UTF-8">
+    <title>查找节点</title>
+    <script src="../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $para = $("p");
+            var $li = $("ul li:eq(1)");
+            var p_text = $para.attr("title");
+            var ul_text = $li.attr("title");
+            var li_text = $li.text();
+
+            alert(p_text);
+            alert(ul_text);
+            alert(li_text);
+        })
+    </script>
+</head>
+<body>
+<p title="选择你最喜爱的水果">你最喜欢的水果是？</p>
+<ul>
+    <li title="苹果">苹果</li>
+    <li title="橘子">橘子</li>
+    <li title="菠萝">菠萝</li>
+</ul>
+</body>
+</html>
