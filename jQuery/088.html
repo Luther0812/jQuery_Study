@@ -1,0 +1,24 @@
+<!--第四章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate多重动画</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body { padding: 60px }
+        #panel {position: relative; width: 100px; height:100px;border: 1px solid #0050D0;background: #96E555; cursor: pointer}
+    </style>
+    <script src="../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#panel").click(function(){
+                $(this).animate({left:"500px"},3000).animate({height:"200px"},3000)
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="panel"></div>
+</body>
+</html>
