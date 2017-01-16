@@ -1,0 +1,49 @@
+<!--第五章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/skin_0.css" id="cssfile"/>
+    <script src="../../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $li = $("#skin li");
+            $li.click(function(){
+                $("#"+this.id).addClass("selected").siblings().removeClass("selected");
+                $("#cssfile").attr("href","css/"+this.id+".css");
+                $.cookie( "MyCssSkin" ,  this.id , { path: '/', expires: 10 })
+            })
+            var cookie_skin = $.cookie( "MyCssSkin");
+            if (cookie_skin) {
+                $("#"+cookie_skin).addClass("selected")                //当前<li>元素选中
+                        .siblings().removeClass("selected");  //去掉其它同辈<li>元素的选中
+                $("#cssfile").attr("href","css/"+ cookie_skin +".css"); //设置不同皮肤
+                $.cookie( "MyCssSkin" ,  cookie_skin  , { path: '/', expires: 10 });
+            }
+        })
+    </script>
+</head>
+<body>
+<ul id="skin">
+    <li id="skin_0" title="灰色" class="selected">灰色</li>
+    <li id="skin_1" title="紫色">紫色</li>
+    <li id="skin_2" title="红色">红色</li>
+    <li id="skin_3" title="天蓝色">天蓝色</li>
+    <li id="skin_4" title="橙色">橙色</li>
+    <li id="skin_5" title="淡绿色">淡绿色</li>
+</ul>
+<div id="div_side_0">
+    <div id="news">
+        <h1 class="title">时事新闻</h1>
+    </div>
+</div>
+<div id="div_side_1">
+    <div id="game">
+        <h1 class="title">娱乐新闻</h1>
+    </div>
+</div>
+</body>
+</html>

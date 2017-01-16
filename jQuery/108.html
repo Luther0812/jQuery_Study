@@ -1,0 +1,41 @@
+<!--第五章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框全选反选</title>
+    <script src="../src/jquery-3.1.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#CheckedAll").click(function(){
+                $("[name=items]:checkbox").attr("checked",this.checked);
+            });
+            $("[name=items]:checkbox").click(function(){
+                var $tmp = $("[name=items]:checkbox");
+                $("#CheckedAll").attr("checked",$tmp.length == $tmp.filter(":checked").length);
+                /*
+                 //一行做过多的事情需要写更多注释。复杂选择器还可能影响效率。因此不推荐如下写法。
+                 $('#CheckedAll').attr('checked',!$('[name=items]:checkbox').filter(':not(:checked)').length);
+                 */
+            });
+            $("#send").click(function(){
+                var str = "你选中的是：\r\n";
+                $("[name=items]:checkbox:checked").each(function(){
+                    str += $(this).val() + "\r\n";
+                })
+                alert(str);
+            })
+        })
+    </script>
+</head>
+<body>
+<form>
+    你爱好的运动是？<input type="checkbox" id="CheckedAll" />全选/全不选<br/>
+    <input type="checkbox" name="items" value="足球"/>足球
+    <input type="checkbox" name="items" value="篮球"/>篮球
+    <input type="checkbox" name="items" value="羽毛球"/>羽毛球
+    <input type="checkbox" name="items" value="乒乓球"/>乒乓球<br/>
+    <input type="button" id="send" value="提　交"/>
+</form>
+</body>
+</html>
