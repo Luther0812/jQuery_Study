@@ -1,2 +1,3 @@
 # jQuery_Study
-jQuery等前端框架学习
+前端框架学习
+1.jQuery
