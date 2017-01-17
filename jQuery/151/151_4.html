@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="em">
+<head>
+    <title>Firebug4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="editplus" />
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+</head>
+<body>
+<label for="passStr">传递参数：</label><br />
+<input type="text" id="passStr" value="Firebug=1.9.1&jQuery=1.7.1" size="35"/><br />
+<button type="button" id="btn1">进行Ajax传递</button>
+<script type="text/javascript">
+    var f1=function() {
+        for (var i=0; i<1000; i++)for (var j=0; j<1000; j++);
+    }
+    function f2() {
+        for (var i=0; i<1000; i++)for (var j=0; j<1000; j++);
+    }
+    document.getElementById('btn1').onclick=f1;
+    document.getElementById('btn2').onclick=f2;
+    document.getElementById('btn3').onclick=function() {
+        for (var i=0; i<1000; i++)for (var j=0; j<1000; j++);
+    }
+</script>
+</body>
+</html>
