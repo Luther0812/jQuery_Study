@@ -1,0 +1,30 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用firefox和firebug记录日志</title>
+    <style>
+
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        // 在firebug上查看
+        jQuery.log = jQuery.fn.log = function (msg) {
+            if (console){
+                console.log("%s: %o", msg, this);
+            }
+            return this;
+        };
+        $(document).ready(function(){
+            $("button").click(function() {
+                $('#someDiv').hide().log('div被隐藏');
+            });
+        });
+    </script>
+</head>
+<body>
+<p><button>Run</button></p>
+<div class="first">Test</div>
+</body>
+</html>

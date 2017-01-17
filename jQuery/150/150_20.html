@@ -1,0 +1,31 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在一段时间之后自动隐藏或是关闭元素</title>
+    <style>
+
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").click(function() {
+                $("div").slideUp(300).delay(3000).fadeIn(400);
+            });
+            /*
+             //这是1.3.2中我们使用setTimeout来实现的方式
+             setTimeout(function() {
+             $('div').fadeIn(400)
+             }, 3000);
+             */
+            //而在1.4之后的版本可以使用delay()这一功能来实现的方式
+            //$("div").slideUp(300).delay(3000).fadeIn(400);
+        });
+    </script>
+</head>
+<body>
+<p><button>Run</button></p>
+<div class="first">Test</div>
+</body>
+</html>

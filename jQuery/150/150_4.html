@@ -1,0 +1,32 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>输入框文字获取和失去焦点</title>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).ready(function(){
+                $("input.text1").val("Enter your search text here.");
+                textFill( $('input.text1') );
+            });
+            function textFill(input){ //input focus text function
+                var originalvalue = input.val();
+                input.focus( function(){
+                    if( $.trim(input.val()) == originalvalue ){
+                        input.val('');
+                    }
+                }).blur( function(){
+                    if( $.trim(input.val()) == '' ){
+                        input.val(originalvalue);
+                    }
+                });
+            }
+        })
+    </script>
+</head>
+<body>
+<input type="text" class="text1" />
+</body>
+</html>

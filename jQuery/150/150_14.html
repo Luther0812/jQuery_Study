@@ -1,0 +1,28 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>回车提交表单</title>
+    <style>
+        #XY{
+            width:40px;
+            height:100px;
+            background:#aaa;
+        }
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input").keyup(function(e){
+                if(e.which=="13"){
+                    alert("回车提交!")
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+<input type="input" />
+</body>
+</html>

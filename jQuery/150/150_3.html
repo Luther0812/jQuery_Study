@@ -1,0 +1,42 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>判断浏览器类型</title>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).ready(function(){
+                // Firefox 2 and above
+                if ($.browser.mozilla && $.browser.version >= "1.8" ){
+                    // do something
+                }
+                // Safari
+                if( $.browser.safari ){
+                    // do something
+                }
+                // Chrome
+                if( $.browser.chrome){
+                    // do something
+                }
+                // Opera
+                if( $.browser.opera){
+                    // do something
+                }
+                // IE6 and below
+                if ($.browser.msie && $.browser.version <= 6 ){
+                    alert("ie6")
+                }
+                // anything above IE6
+                if ($.browser.msie && $.browser.version > 6){
+                    alert("ie6以上")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

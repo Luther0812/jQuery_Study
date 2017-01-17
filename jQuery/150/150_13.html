@@ -1,0 +1,26 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>检测鼠标的右键和左键</title>
+    <style>
+        #XY{
+            width:40px;
+            height:100px;
+            background:#aaa;
+        }
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#XY").mousedown(function(e){
+                alert(e.which)  // 1 = 鼠标左键 ; 2 = 鼠标中键; 3 = 鼠标右键
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="XY" class="box"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>$.proxy的使用</title>
+    <style>
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div id="panel" style="display:none">
+    <button>Close</button>
+</div>
+<script type="text/javascript">
+    $('#panel').fadeIn(function(){
+        // Using $.proxy :
+        $('#panel button').click($.proxy(function(){
+            // this 指向 #panel
+            $(this).fadeOut();
+        },this));
+    });
+</script>
+</body>
+</html>

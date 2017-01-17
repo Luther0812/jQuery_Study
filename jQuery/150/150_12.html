@@ -1,0 +1,39 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关闭所有动画效果</title>
+    <style>
+        #XY{
+            width:40px;
+            height:100px;
+            background:#aaa;
+        }
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#XY1").click(function(){
+                animateIt();
+            });
+            $("#XY2").click(function(){
+                jQuery.fx.off = true;
+            });
+            $("#XY3").click(function(){
+                jQuery.fx.off = false;
+            });
+        });
+
+        function animateIt() {
+            $("#XY").slideToggle("slow");
+        }
+    </script>
+</head>
+<body>
+<button id="XY1" class="box">开始动画</button>
+<button id="XY2" class="box">关闭动画</button>
+<button id="XY3" class="box">开启动画</button>
+<div id="XY" class="box"></div>
+</body>
+</html>

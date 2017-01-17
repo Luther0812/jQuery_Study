@@ -1,0 +1,47 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>检查某个元素是否包含某个类或是元素</title>
+    <style>
+        body {
+            margin: 10px auto;
+            width: 570px;
+            font: 75%/120% Arial, Helvetica, sans-serif;
+            color: #999999;
+        }
+        a {
+            color:#333399;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        a.pdf {
+            background: url(img/file-red.gif) no-repeat;
+            padding-left: 16px;
+        }
+        a.zip {
+            background: url(img/file-orange.gif) no-repeat;
+            padding-left: 16px;
+        }
+        a.psd {
+            background: url(img/file-blue.gif) no-repeat;
+            padding-left: 16px;
+        }
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("a[href$='pdf']").addClass("pdf");
+            $("a[href$='zip']").addClass("zip");
+            $("a[href$='psd']").addClass("psd");
+        });
+    </script>
+</head>
+<body>
+<p><a href="http://www.webdesignerwall.com/file/wdw-logo.pdf">PDF file</a> (wdw-logo.pdf)</p>
+<p><a href="http://www.webdesignerwall.com/file/wdw-logo.psd">PSD file</a> (wdw-logo.psd)</p>
+<p><a href="http://www.webdesignerwall.com/file/wdw-logo.zip">Zip file</a> (wdw-logo.zip)</p>
+</body>
+</html>

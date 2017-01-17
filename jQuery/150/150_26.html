@@ -1,0 +1,29 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>从元素中除去html内容</title>
+    <style>
+    </style>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div>
+    <p>锋利的<a href="#nogo">jQuery</a></p>
+</div>
+<script type="text/javascript">
+    (function($) {
+        $.fn.stripHtml = function() {
+            var regexp = /<("[^"]*"|'[^']*'|[^'">])*>/gi;
+            this.each(function() {
+                $(this).html( $(this).html().replace(regexp,'') );
+            });
+            return $(this);
+        }
+    })(jQuery);
+    //用法：
+    $('div').stripHtml();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!--第十一章-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新窗口打开页面</title>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).ready(function(){
+                //例子1: href=”http://”的超链接将会在新窗口打开链接
+                $('a[href^="http://"]').attr("target", "_blank");
+
+                //例子2: rel="external"的超链接将会在新窗口打开链接
+                $("a[rel$='external']").click(function(){
+                    this.target = "_blank";
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<a href="http://www.cssrain.cn" >新窗口</a>
+
+<a href="http://www.cssrain.cn" rel="external">新窗口</a>
+
+
+<a href="29.扩展String对象的方法.html" >当前窗口</a>
+<a href="#name">当前窗口</a>
+</body>
+</html>
