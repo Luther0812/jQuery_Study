@@ -1,0 +1,30 @@
+<!--第七章-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <script type="text/javascript" src="../../src/jquery-3.1.1.js"></script>
+    <script src="lib/jquery.form.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myForm').submit(function() {
+                $(this).ajaxSubmit(function() {
+                    $('#output1').html("提交成功！欢迎下次再来！").show();
+                });
+                return false; //阻止表单默认提交
+            });
+        });
+    </script>
+</head>
+<body>
+<h3> Demo 2 : form插件的使用--ajaxForm(). </h3>
+<form id="myForm" action="demo.php" method="post">
+    名称： <input type="text" name="name" /> <br/>
+    地址： <input type="text" name="address" /><br/>
+    自我介绍： <textarea name="comment"></textarea> <br/>
+    <input type="submit" id="test" value="提交" /> <br/>
+    <div id="output1" style="display:none;"></div>
+</form>
+</body>
+</html>
