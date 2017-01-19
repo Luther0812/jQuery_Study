@@ -1,0 +1,24 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对话框的基本用法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<div id="dialog1" title="Window title 1">
+    <p>Content of the dialog box 1</p>
+</div>
+<div id="dialog2" title="Window title 2">
+    <p>Content of the dialog box 2</p>
+</div>
+
+<script type="text/javascript">
+    $("#dialog1,#dialog2").dialog();
+</script>
+</body>
+</html>

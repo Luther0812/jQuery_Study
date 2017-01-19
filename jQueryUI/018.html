@@ -1,0 +1,110 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对话框dialog(options)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div.ui-dialog-titlebar{
+            font-size: 25px;
+            color: #B1D410;
+        }
+        div.ui-dialog-content{
+            font-size:25px;
+            font-family: georgia;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div id="dialog" title="Window title">
+    <p>Content of the dialog box</p>
+</div>
+
+<script type="text/javascript">
+    $("#dialog").dialog({
+        //给对话框窗口指定标题
+        title:"Window Title Option",
+        //给对话框添加按钮
+        buttons:{
+            "关闭":function(){
+                alert("关闭");
+                $(this).dialog("close");
+            }
+        },
+        //管理对话框在页面中的位置
+        position:"center center",
+        //对话框初始化高度
+        height:"auto",
+        //对话框初始化宽度
+        weight:200,
+        //对话框最大高度
+        maxHeight:500,
+        //对话框最大宽度
+        maxWidth:400,
+        //对话框最小高度
+        minHeight:100,
+        //对话框最小宽度
+        minWidth:200,
+        //对话框显示特效
+        show:"pulsate",
+        //对话框消失特效
+        hide:"scale",
+        //对话框自动打开，默认true，如果是false则还需dialog("open")方可显示可见
+        autoOpen:true,
+        //移动对话框，默认true
+        draggable:false,
+        //调整对话框大小
+        resizable:true,
+        //模态对话框，默认false
+        modal:true,
+        //对话框叠加，顺序可变，默认true
+        stack:true,
+        //对话框被激活（单击），调用事件
+        focus:function(){
+            alert("focus");
+        },
+        //对话框显示，调用事件
+        open:function(){
+            alert("open");
+        },
+        //对话框将要关闭时候，调用事件，如果返回false，则取消关闭
+        beforeclose:function(){
+            alert("beforeclose");
+        },
+        //对话框关闭的时候调用事件
+        close:function(){
+            alert("close");
+        },
+        //移动对话框，调用事件
+        drag:function(){
+            alert("drag");
+        },
+        //开始移动对话框，调用事件
+        dragStart:function(){
+            alert("dragStart");
+        },
+        //停止移动对话框，调用事件
+        dragStop:function(){
+            alert("dragStop");
+        },
+        //调整对话框大小，调用事件
+        resize:function(){
+            alert("resize");
+        },
+        //开始调整对话框大小，调用事件
+        resizeStart:function(){
+            alert("resizeStart");
+        },
+        //停止调整对话框大小，调用事件
+        resizeStop:function(){
+            alert("resizeStop");
+        },
+    });
+</script>
+</body>
+</html>

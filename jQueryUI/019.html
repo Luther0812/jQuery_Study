@@ -1,0 +1,52 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>对话框dialog("action",params)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div.ui-dialog-titlebar{
+            font-size: 25px;
+            color: #B1D410;
+        }
+        div.ui-dialog-content{
+            font-size:25px;
+            font-family: georgia;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div id="dialog" title="Window title">
+    <p>Content of the dialog box</p>
+</div>
+
+<script type="text/javascript">
+    $("#dialog").dialog({
+        height:200,
+    });
+    //打开对话框
+    $("#dialog").dialog().dialog("open");
+    //关闭对话框
+    $("#dialog").dialog().dialog("open");
+    //删除对话框管理
+    $("#dialog").dialog().dialog("destroy");
+    //对话框不可用
+    $("#dialog").dialog().dialog("disable");
+    //对话框可用
+    $("#dialog").dialog().dialog("enable");
+    //判断对话框列表中是否有处于激活状态的
+    $("#dialog").dialog().dialog("isOpen");
+    //使对话框处于页面最前端
+    $("#dialog").dialog().dialog("moveToTop");
+    //获取指定属性的值
+    $("#dialog").dialog().dialog("option","height");
+    //更改指定属性的值
+    $("#dialog").dialog().dialog("option",height,300);
+</script>
+</body>
+</html>
