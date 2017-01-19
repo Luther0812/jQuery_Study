@@ -1,0 +1,28 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>按钮的button("action",params)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        span.ui-button{
+            font-size:20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<span id="button">Button</span>
+
+<script type="text/javascript">
+    //bind事件
+    $("#button").button().bind("click",function(event){
+        alert("click");
+    });
+</script>
+</body>
+</html>

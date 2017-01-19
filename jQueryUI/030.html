@@ -1,0 +1,34 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>按钮的button()方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        span.ui-button{
+            font-size:20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<span id="button">Button</span>
+
+<script type="text/javascript">
+    $("#button").button({
+        //默认是false，如果true，则单击按钮，按钮发生变化，但是不激活任何事件
+        disable:false,
+        //按钮显示的文字
+        label:"BUTTON",
+        //按钮的图标
+        icons:{primary:"ui-icon-calendar"},
+        //是否显示按钮文字
+        text:true,
+    });
+</script>
+</body>
+</html>
