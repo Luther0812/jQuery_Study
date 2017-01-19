@@ -1,0 +1,36 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单 修改样式</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        h1.ui-accordion-header{
+            font-size: 10px;
+        }
+        div.ui-accordion-content{
+            font-size:15px;
+            font-family: georgia;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+<div id="accordion">
+    <h1><a>Menu 1</a></h1>
+    <div>Menu 1 Context</div>
+    <h1><a>Menu 2</a></h1>
+    <div>Menu 2 Context</div>
+    <h1><a>Menu 3</a></h1>
+    <div>Menu 3 Context</div>
+</div>
+
+<script type="text/javascript">
+    $("#accordion").accordion();
+</script>
+</body>
+</html>
