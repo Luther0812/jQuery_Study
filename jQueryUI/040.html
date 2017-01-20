@@ -1,0 +1,34 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条progress("action",params)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/jquery-ui.css"/>
+    <style type="text/css">
+        div#progressbar.ui-progressbar{
+            height:20px;
+        }
+    </style>
+</head>
+<body>
+Progress:<div id="progressbar"></div>
+
+<script type="text/javascript">
+    $("#progressbar").progressbar();
+    //获取进度条当前值
+    $("#progressbar").progressbar("value");
+    //指定进度条的进度值
+    $("#progressbar").progressbar("value",60);
+    //获得进度条指定参数的值
+    $("#progressbar").progressbar("option","value");
+    //更改进度条指定参数的值
+    $("#progressbar").progressbar("option","value",90);
+    //移除进度条
+    $("#progressbar").progressbar("destroy");
+</script>
+</body>
+</html>

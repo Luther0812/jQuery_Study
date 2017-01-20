@@ -1,0 +1,26 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条bind()方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/jquery-ui.css"/>
+    <style type="text/css">
+        div#progressbar.ui-progressbar{
+            height:20px;
+        }
+    </style>
+</head>
+<body>
+Progress:<div id="progressbar"></div>
+
+<script type="text/javascript">
+    $("#progressbar").progressbar().bind("progressbarchange",function(event){
+        alert("progressbarchange");
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条样式</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/jquery-ui.css"/>
+    <style type="text/css">
+        div#progressbar.ui-progressbar{
+            height:20px;
+        }
+    </style>
+</head>
+<body>
+Progress:<div id="progressbar"></div>
+
+<script type="text/javascript">
+    $("#progressbar").progressbar();
+</script>
+</body>
+</html>
