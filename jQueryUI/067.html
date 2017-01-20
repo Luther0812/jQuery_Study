@@ -1,0 +1,72 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自动补全autocomplete("action",params)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<h3>Enter the name of the book:</h3>
+<input id="book"/>
+
+<script type="text/javascript">
+    var books = ["Web development with J2EE",
+        "Practical CSS & JavaScript",
+        "Practical Ruby on Rails",
+        "Introduction to HTML &CSS",
+        "jQueryUI"];
+
+    //禁用自动补全机制
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("disable");
+
+    //启用自动补全机制
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("enable");
+
+    //在数据源中匹配字符串
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("search","");
+
+    //隐藏列表
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("close");
+
+    //获取建议列表的DOM元素
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("widget");
+
+    //获取指定参数的值
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("option","miniLength");
+
+    //更改指定参数的值
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("option","miniLength",3);
+
+    //移除自动补全管理机制
+    $("#book").autocomplete({
+        //指定用于建议列表的数据源
+        source:books,
+    }).autocomplete("destroy");
+</script>
+</body>
+</html>

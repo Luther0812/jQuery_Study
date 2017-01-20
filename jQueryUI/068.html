@@ -1,0 +1,55 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自动补全autocomplete.bind方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<h3>Enter the name of the book:</h3>
+<input id="book"/>
+
+<script type="text/javascript">
+    var books = ["Web development with J2EE",
+        "Practical CSS & JavaScript",
+        "Practical Ruby on Rails",
+        "Introduction to HTML &CSS",
+        "jQueryUI"];
+
+    $("#book").autocomplete({
+        source:books,
+    }).autocomplete("autocompleteopen",function(){
+        alert("open");
+    });
+    $("#book").autocomplete({
+        source:books,
+    }).autocomplete("autocompleteclose",function(){
+        alert("close");
+    });
+    $("#book").autocomplete({
+        source:books,
+    }).autocomplete("autocompletesearch",function(){
+        alert("search");
+    });
+    $("#book").autocomplete({
+        source:books,
+    }).autocomplete("autocompletefocus",function(){
+        alert("focus");
+    });
+    $("#book").autocomplete({
+        source:books,
+    }).autocomplete("autocompleteselect",function(){
+        alert("select");
+    });
+    $("#book").autocomplete({
+        source:books,
+    }).autocomplete("autocompletechange",function(){
+        alert("change");
+    });
+</script>
+</body>
+</html>
