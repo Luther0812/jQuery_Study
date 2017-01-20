@@ -1,0 +1,76 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历datepicker(options)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/i18n/jquery.ui.datepicker-zh-CN.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div.ui-datepicker-header{
+            font-size:12px;
+            font-family: georgia;
+        }
+        table-ui-datepicker-calendar{
+            font-size:10px;
+            font-family:georgia;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+<h3>Click to Select a Date</h3>
+<input id="date"/>
+
+<script type="text/javascript">
+    $("#date").datepicker({
+        //制定日历从星期几开始,0表示周日
+        firstDay:0,
+        //日历中同时显示的月份个数
+        //numberOfMonths:[3,2],
+        //是否显示上下相关月份的日期
+        showOtherMonths:true,
+        //是否可以选择上下月份的日期
+        selectOtherMonths:true,
+        //快速选择月份的下拉列表
+        //changeMonth:true,
+        //快速选择年份的下拉列表
+        //changeYear:true,
+        //日历的特效
+        showAnim:"bounce",
+        //特效持续时间
+        duration:1000,
+        //日历返回的日期格式
+        dateFormat:"dd/mm/yy",
+        //可以选择的最小日期
+        minDate:"-3",
+        //可以选择的最大日期
+        maxDate:"3",
+        //设定默认日期
+        //defaultDate:"7",
+        //在日历显示的时候调用方法
+        beforeShow:function(){
+            //alert("beforeShow");
+        },
+        //显示日历中日期的时候被调用方法
+        beforeShowDay:function(date){
+            //alert(date);
+        },
+        //年月改变时调用方法
+        onChangeMonthYear:function(year,month){
+            //alert("onChangeMonthYear");
+        },
+        //日历关闭时候，调用方法
+        onClose:function(dateText){
+            alert("onClose");
+        },
+        onSelect:function(dateText){
+            alert("onSelect");
+        }
+    });
+</script>
+</body>
+</html>

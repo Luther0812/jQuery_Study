@@ -1,0 +1,41 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>禁止选择特定的日期</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div.ui-datepicker-header{
+            font-size:12px;
+            font-family: georgia;
+        }
+        table-ui-datepicker-calendar{
+            font-size:10px;
+            font-family:georgia;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+<h3>Click to Select a Date</h3>
+<input id="date"/>
+
+<script type="text/javascript">
+    //显示日历
+    $("input#date").datepicker({
+        beforeShowDay:function(date){
+            var dayOfWeek = date.getDay();
+            if(dayOfWeek == 0 || dayOfWeek == 6){
+                return [false];
+            }else{
+                return [true];
+            }
+        }
+    });
+</script>
+</body>
+</html>

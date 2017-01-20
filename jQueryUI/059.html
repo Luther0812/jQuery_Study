@@ -1,0 +1,39 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指定最小及最大日期</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/i18n/jquery.ui.datepicker-zh-CN.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div.ui-datepicker-header{
+            font-size:12px;
+            font-family: georgia;
+        }
+        table-ui-datepicker-calendar{
+            font-size:10px;
+            font-family:georgia;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+<h3>Click to Select a Date</h3>
+<h5>Before Date</h5>
+<div id="date"></div>
+<h5>After Date</h5>
+
+<script type="text/javascript">
+    //显示日历
+    $("#date").datepicker({
+        showOtherMonths:true,
+        minDate:"-3",
+        maxDate:"3",
+    });
+</script>
+</body>
+</html>
