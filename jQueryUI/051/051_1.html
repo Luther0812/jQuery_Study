@@ -1,0 +1,38 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示两个游标的值</title>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div#slider.ui-slider{
+        }
+    </style>
+</head>
+<body>
+<img src="test.jpeg"/><br/><br/>
+<div id="slider"></div>
+
+Start:<span id="valuestart"></span><br/>
+Stop:<span id="valuestop"></span><br/>
+Change:<span id="valuechange"></span><br/>
+Slide:<span id="valueslide"></span><br/>
+
+<script type="text/javascript">
+    //bind.start
+    $("#slider").slider({
+        animate:true,
+        slide:function(event){
+            var value = $("#slider").slider("value");
+            var opacity = value / 100;
+            $("img").css({opacity:opacity});
+
+        }
+    }).slider("value",100);
+</script>
+</body>
+</html>

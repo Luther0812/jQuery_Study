@@ -1,0 +1,37 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑块的slider("action",params)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div#slider.ui-slider{
+        }
+    </style>
+</head>
+<body>
+<h3>Slider</h3>
+<div id="slider"></div>
+
+<script type="text/javascript">
+    //禁用滑块功能
+    $("#slider").slider().slider("disable");
+    //启用滑块功能
+    $("#slider").slider().slider("enable");
+    //获取游标当前值
+    $("#slider").slider().slider("value");
+    //更改游标值
+    $("#slider").slider().slider("value",50);
+    //获得slider指定参数的值
+    $("#slider").slider().slider("option","value");
+    //更改指定slider指定参数的值
+    $("#slider").slider().slider("option","value",20);
+    //移除滑块管理
+    $("#slider").slider().slider("destroy");
+</script>
+</body>
+</html>

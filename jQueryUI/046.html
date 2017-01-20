@@ -1,0 +1,59 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑块的slider(options)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        div#slider.ui-slider{
+        }
+    </style>
+</head>
+<body>
+<h3>Slider</h3>
+<div id="slider"></div>
+
+<script type="text/javascript">
+    $("#slider").slider({
+        //默认为false，设置true，则禁用滑块
+        disabled:false,
+        //移动效果，默认是FALSE
+        animate:true,
+        //滑块水平或者竖直效果
+        orientation:"horizontal",
+        //指定游标的最小值
+        min:0,
+        //指定游标的最大值
+        max:100,
+        //指定游标在滑块区间上的值
+        value:50,
+        //多个游标的时候设置初始值
+        values:[20,30],
+        //true表示两个游标之间被着色，min表示单个游标的左端被着色，max表示单个游标的右端被着色
+        range:true,
+        //移动增量
+        step:1,
+        //开始移动事件
+        start:function(event){
+            alert("start");
+        },
+        //结束移动事件
+        stop:function(event){
+            alert("stop");
+        },
+        //结束移动调用事件
+        change:function(event){
+            alert("change");
+        },
+        //拖动游标事件
+        slide:function(event){
+            alert("slide");
+        },
+    });
+</script>
+</body>
+</html>
