@@ -1,0 +1,49 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在按钮上显示图标</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        span.ui-button{
+            font-size:20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<span id="volume">Volume Off</span>
+
+<script type="text/javascript">
+    $("#volume").button({
+        icons:{secondary:"ui-icon-volume-off"}
+    }).click(function(event){
+        var volume = $(this).button("option","icons").secondary;
+        var temp;
+        if(volume == "ui-icon-volume-off"){
+            temp = false;
+            //return false;
+        }else{
+            temp = true;
+            //return true;
+        };
+
+        if(temp){
+            $(this).button("option","label","Volume Off");
+            $(this).button("option","icons",{
+                secondary:"ui-icon-volume-off"
+            })
+        }else{
+            $(this).button("option","label","Volume On");
+            $(this).button("option","icons",{
+                secondary:"ui-icon-volume-on"
+            })
+        }
+    })
+</script>
+</body>
+</html>

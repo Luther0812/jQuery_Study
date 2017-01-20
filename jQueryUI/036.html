@@ -1,0 +1,124 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建计算器</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type=text/css>
+        span.ui-button-text-only {     /* any key */
+            width : 60px;
+        }
+        div.ui-button-text-only {      /* field result */
+            width : 230px;
+            text-align : right;
+        }
+        div.ui-button-text-only.ie {   /* field of IE specific result */
+            width : 230px;
+        }
+    </style>
+</head>
+<body>
+<div id="result">0</div>
+
+<div class="touches">
+    <span>7</span><span>8</span><span>9</span><span>/</span>
+</div>
+<div class="touches">
+    <span>4</span><span>5</span><span>6</span><span>*</span>
+</div>
+<div class="touches">
+    <span>1</span><span>2</span><span>3</span><span>-</span>
+</div>
+<div class="touches">
+    <span>0</span><span>.</span><span>=</span><span>+</span>
+</div>
+
+<script>
+
+    var result = 0;          // calculation result
+    var previous_touche;     // previously pressed key
+    var last_operation;      // last operation
+
+    $("span").button ().click (function (event)
+    {
+        var touche = $(this).text ();         // button currently pressed
+        var display = $("#result").text ();   // current display (string)
+        if (touche == "+" || touche == "−" ||
+                touche == "*" || touche == "/" ||
+                touche == "=")
+        {
+            if (previous_touche != "+" && previous_touche != "−" &&
+                    previous_touche != "*" && previous_touche != "/")
+            {
+                // we pressed +, −, *, / or = :
+                // if a previous operation was in progress, it performs
+                if (last_operation == "+")
+                {
+                    result += parseFloat (display);
+                    $("#result span").text (format_display (result));
+                }
+                else if (last_operation == "−")
+                {
+                    result -= parseFloat (display);
+                    $("#result span").text (format_display (result));
+                }
+                else if (last_operation == "*")
+                {
+                    result *= parseFloat (display);
+                    $("#result span").text (format_display (result));
+                }
+                else if (last_operation == "/")
+                {
+                    result /= parseFloat (display);
+                    $("#result span").text (format_display (result));
+                }
+                result = parseFloat ($("#result").text ());
+            }
+            if (touche == "=") last_operation = undefined;
+            else last_operation = touche;
+        }
+        else
+        {
+            // we pressed a number or point
+            // we combine this key with the current display,
+            // unless the previous button was a sign operation
+            if (display == "0" ||
+                    previous_touche == "+" ||
+                    previous_touche == "−" ||
+                    previous_touche == "*" ||
+                    previous_touche == "/" ||
+                    previous_touche == "=") display = "";
+            if (display.length < 16) display += touche;
+            $("#result span").text (display);
+        }
+        previous_touche = touche;
+    });
+
+    $("div.touches").buttonset ();
+
+    $("div#result").button ().click (function (event)
+    {
+        // click on the result field: it sets the display to 0
+        var display = $("#result").text ();
+        if (display == "0") result = 0;
+        $("#result span").text ("0");
+    });
+
+    // consider a special style for Internet Explorer
+    if ($.browser.msie) $("div#result").addClass ("ie");
+
+    // ensure that the displayed result is not more than 16 characters
+    function format_display (display)
+    {
+        display += "";
+        if (display.length < 16) return display;
+        if (display.match (/\./)) return display.substring (0, 15);
+        else return ("Out of Memory");
+    }
+</script>
+</body>
+</html>

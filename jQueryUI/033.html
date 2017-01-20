@@ -1,0 +1,29 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>单选按钮组</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        span.ui-button{
+            font-size:20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div>
+    性别：<input type="radio" name="sex" id="m"><label for="m">Male</label>
+    <input type="radio" name="sex" id="f"><label for="f">Female</label>
+</div>
+
+<script type="text/javascript">
+    //$("input").button();
+    $("div").buttonset();
+</script>
+</body>
+</html>

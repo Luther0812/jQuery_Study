@@ -1,0 +1,31 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>复选按钮组</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        span.ui-button{
+            font-size:20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox" name="red" id="idred"><label for="idred">Red</label>
+    <input type="checkbox" name="green" id="idgreen"><label for="idgreen">Green</label>
+    <input type="checkbox" name="blue" id="idblue"><label for="idblue">Red</label>
+    <input type="checkbox" name="yellow" id="idyellow"><label for="idyellow">Green</label>
+</div>
+
+<script type="text/javascript">
+    //$("input").button();
+    $("div").buttonset();
+</script>
+</body>
+</html>
