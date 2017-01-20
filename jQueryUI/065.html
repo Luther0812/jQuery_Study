@@ -1,0 +1,34 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动补全样式</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        li.ui-menu-item{
+            font-size:12px;
+            font-family:georgia;
+        }
+    </style>
+</head>
+<body>
+<h3>Enter the name of the books</h3>
+<input id="book"/>
+
+<script type="text/javascript">
+    var books = ["Web development with J2EE",
+        "Practical CSS & JavaScript",
+        "Practical Ruby on Rails",
+        "Introduction to HTML &CSS",
+        "jQueryUI"];
+
+    $("input#book").autocomplete({
+        source:books
+    });
+</script>
+</body>
+</html>
