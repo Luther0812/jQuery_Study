@@ -1,0 +1,65 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        .basket{
+            border:transparent solid 2px;
+        }
+        .hover{
+            border-color:red;
+        }
+    </style>
+</head>
+<body>
+<h2>Drag your books in the cart</h2>
+<div id="books">
+    <img src="p1.jpg" height:80/>
+    <img src="p2.jpg" height:80/>
+    <img src="p3.jpg" height:80/>
+    <img src="p4.jpg" height:80/>
+</div>
+<hr/>
+<h2>Cart:</h2>
+<div id="shopping">
+    <img src="B.jpg" class="basket"/>
+</div>
+
+<script type="text/javascript">
+    $("div#books img").draggable({
+        revert:"invalid"
+    });
+
+    $("div#shopping img.basket").droppable({
+        hoverClass:"hover",
+        drop:function(event,ui){
+            $("div#shopping").append(ui.draggable);
+            $(ui.draggable).css({
+                position:"relative",
+                top:"0px",
+                left:"0px"
+            }).addClass("bought");
+        }
+    });
+
+    $("div#books").droppable({
+        accept:".bought",
+        drop:function(event,ui){
+            $("div#books").append(ui.draggable);
+            $(ui.draggable).css({
+                position:"relative",
+                top:"0px",
+                left:"0px"
+            }).removeClass("bought");
+
+        }
+    })
+</script>
+</body>
+</html>
