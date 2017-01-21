@@ -1,0 +1,94 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拖放draggable(options)方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<div id="div1" style="border:solid 1px; background-color: #4e9a06">
+    <span>Item 1 to Move</span><br/><br/>
+    <span>Item 2 to Move</span><br/><br/>
+    <span>Item 3 to Move</span><br/><br/>
+</div>
+
+<p>Start:<span id="start"></span></p>
+<p>Drag:<span id="drag"></span></p>
+<p>Stop:<span id="stop"></span></p>
+
+<div id="div2" style="border:solid 1px; background-color: #f7c942">
+    <span>Item 1.1 to Move</span><br/><br/>
+    <span>Item 2.1 to Move</span><br/><br/>
+    <span>Item 3.1 to Move</span><br/><br/>
+</div>
+
+<p>Start:<span id="start1"></span></p>
+<p>Drag:<span id="drag1"></span></p>
+<p>Stop:<span id="stop1"></span></p>
+
+<script type="text/javascript">
+    $("#div1 span,#div2 span").draggable({
+        //禁止移动元素
+        //disabled:false,
+        //制定选择器，将其元素设置为不能移动
+        //cancel:"span",
+        //创建和移动所选元素的副本
+        //helper:"clone",
+        //使用helper创建的新元素隶属于哪个元素
+        //appendTo:"parent",
+        //设置true的时候，可以给正在移动的元素添加类
+        //addClasses:true,
+        //指定元素移动时候鼠标指针的形状
+        //cursor:"pointer",
+        //指定一个延迟事件，只在鼠标持续拖动超过延时时间后，元素开始移动
+        //delay:0,
+        //指定一个距离，只有在鼠标持续拖动超过该距离后，元素开始移动
+        //distance:1,
+        //元素移动过程中的透明度
+        //opacity:1,
+        //一个字符串，限定被移动的元素只能放置在该值中
+        //scope:"*",
+        //指定一个元素可排序的列表。拖放之后，元素将成为该列表的一部分。使用该属性，helper最好设置为clone
+        //connectToSortable:"",
+        //设置元素是否在被放置时，返回其原始位置
+        //revert:false,
+        //设置元素被放置后返回原始位置的过程持续事件
+        //revertDuration:500,
+        //用一个数组指定元素拖动过程中每一次移动的距离
+        //grid:[1,1],
+        //指定移动轴的方向
+        //axis:false,
+        //指定一个容器元素，拖动将限制在该元素范围内
+        //containment:"parent",
+        //调整某元素在另一个元素之上移动的显示情况
+        //snap:true,
+        //设置被移动的元素和snap中指定的元素间应该如何调整
+        //snapMode:"both",
+        //位置偏移时候触发调整行为所需的最大像素距离
+        //snapTolerance:20,
+        //如果元素拖动超过窗口的可视区域，则窗口会自动滚动
+        //scroll:true,
+        //设置鼠标移除窗口多少像素时候，触发窗口滚动显示
+        //scrollSensitivity:20,
+        //设置滚动显示的速度
+        //scrollSpeed:20,
+        //移动开始激活事件
+        /*start:function(event,ui){
+            alert(ui.helper + "," + ui.position.top + "," + ui.offset.top);
+        },*/
+        //移动开始后持续的事件
+        /*drag:function(event,ui){
+            alert(ui.helper + "," + ui.position.top + "," + ui.offset.top);
+        },*/
+        //结束移动的事件
+        /*stop:function(event,ui){
+         alert(ui.helper + "," + ui.position.top + "," + ui.offset.top);
+         },*/
+    });
+</script>
+</body>
+</html>

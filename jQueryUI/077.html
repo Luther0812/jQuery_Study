@@ -1,0 +1,38 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在移动过程中执行额外的处理</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<div id="div1" style="border:solid 1px; background-color: #4e9a06">
+    <span>Item 1 to Move</span><br/><br/>
+    <span>Item 2 to Move</span><br/><br/>
+    <span>Item 3 to Move</span><br/><br/>
+</div>
+
+<p>Start:<span id="start"></span></p>
+<p>Drag:<span id="drag"></span></p>
+<p>Stop:<span id="stop"></span></p>
+
+<script type="text/javascript">
+    //开始拖动，激活事件
+    $("#div1 span").draggable({
+        start:function(event,ui){
+            $("#start").text(ui.offset.top + "," + ui.offset.left);
+        },
+        drag:function(event,ui){
+            $("#drag").text(ui.offset.top + "," + ui.offset.left);
+        },
+        stop:function(event,ui){
+            $("#stop").text(ui.offset.top + "," + ui.offset.left);
+        }
+    });
+</script>
+</body>
+</html>

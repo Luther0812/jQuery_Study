@@ -1,0 +1,38 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>给移动施加一些限制</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<div id="div1" style="border:solid 1px; background-color: #4e9a06">
+    <span>Item 1 to Move</span><br/><br/>
+    <span>Item 2 to Move</span><br/><br/>
+    <span>Item 3 to Move</span><br/><br/>
+</div>
+
+<script type="text/javascript">
+    /*$("#div1 span").draggable({
+        helper:"clone",
+        stop:function(event,ui){
+            ui.helper.clone().appendTo($(this).parent());
+            $(this).remove();
+        }
+    });*/
+
+    $("#div1 span").draggable({
+        helper:"clone",
+    }).bind("dragstop",f = function(event,ui){
+        ui.helper.clone().appendTo($(this).parent()).draggable({
+            helper:"clone"
+        }).bind("dragstop",f);
+        $(this).remove();
+    })
+</script>
+</body>
+</html>
