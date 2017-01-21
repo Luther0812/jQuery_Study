@@ -1,0 +1,60 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>显示选择序列中的事件发生顺序</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        p.ui-selecting{
+            color:red;
+        }
+        p.ui-selected{
+            background-color:gainsboro;
+        }
+        div.ui-selectable-helper{
+            border-color:red;
+            border-style:solid;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <p>Paragraph 1 </p>
+    <p>Paragraph 2 </p>
+    <p>Paragraph 3 </p>
+    <p>Paragraph 4 </p>
+    <p>Paragraph 5 </p>
+</div>
+
+<hr/>
+
+<span id="result"></span>
+
+<script type="text/javascript">
+    $("#div1").selectable({
+        start:function(event){
+            $("span#result").html($("span#result").html() + "<b>start</b>" )
+        },
+        stop:function(event){
+            $("span#result").html($("span#result").html() + ", stop" )
+        },
+        selecting:function(event){
+            $("span#result").html($("span#result").html() + ", selecting" )
+        },
+        unselecting:function(event){
+            $("span#result").html($("span#result").html() + ", unselecting" )
+        },
+        selected:function(event){
+            $("span#result").html($("span#result").html() + ", selected" )
+        },
+        unselected:function(event){
+            $("span#result").html($("span#result").html() + ", unselected" )
+        }
+    });
+</script>
+</body>
+</html>
