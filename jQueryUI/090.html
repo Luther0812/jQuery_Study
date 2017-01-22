@@ -1,0 +1,30 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩放显示元素位置</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<p style="background-color: #C6E746;width:150px">
+    Resize me!
+</p>
+
+<hr/>
+
+<span id="result"></span>
+
+<script type="text/javascript">
+    $("p").resizable({
+        handles:"n,e,s,w,ne,se,nw,sw",
+        resize:function(event,ui){
+            $("#result").text("top = " + ui.position.top + ", left = " + ui.position.left + "width = " + ui.size.width + ", height = " + ui.size.height);
+        }
+    });
+</script>
+</body>
+</html>

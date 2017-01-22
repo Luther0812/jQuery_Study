@@ -1,0 +1,36 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可缩放文本框</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        .helper{
+            border:dotted 1px red;
+        }
+    </style>
+</head>
+<body>
+<p>
+    Resize me!
+</p>
+
+<div style="width:150px;height:20px">
+    <input style="background-color:gainsboro;width:100%" value="Resize me!"/>
+</div>
+
+<hr/>
+
+<div style="width:150px;height:40px;">
+    <textarea id="textarea" style="background-color: #C6E746;width:99%;height:99%">Resize me!</textarea>
+</div>
+
+<script type="text/javascript">
+    $("#textarea").resizable();
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缩放过程中执行动画</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        .helper{
+            border:dotted 1px red;
+        }
+    </style>
+</head>
+<body>
+<p style="background-color: #C6E746;width:150px">
+    Resize me!
+</p>
+
+<script type="text/javascript">
+    $("p").resizable({
+        animate:true,
+        helper:"helper"
+    });
+</script>
+</body>
+</html>

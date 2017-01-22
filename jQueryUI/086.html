@@ -1,0 +1,66 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调序显示事件出现顺序</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        p.ui-sortable-helper{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <p> Paragraph 1 </p>
+    <p> Paragraph 2 </p>
+    <p> Paragraph 3 </p>
+    <p> Paragraph 4 </p>
+    <p> Paragraph 5 </p>
+</div>
+
+<hr/>
+
+<span id="result"></span>
+
+<script type="text/javascript">
+    $("#div1").sortable({
+        revert:1000,
+        start:function(event,ui){
+            $("span#result").html($("span#result").html() + "<b>start</b>");
+        },
+        stop:function(event,ui){
+            $("span#result").html($("span#result").html() + ", stop");
+        },
+        /*sort:function(event,ui){
+            $("span#result").html($("span#result").html() + ", sort");
+        },*/
+        change:function(event,ui){
+            $("span#result").html($("span#result").html() + ", change");
+        },
+        beforeStop:function(event,ui){
+            $("span#result").html($("span#result").html() + ", beforeStop");
+        },
+        update:function(event,ui){
+            $("span#result").html($("span#result").html() + ", update");
+        },
+        remove:function(event,ui){
+            $("span#result").html($("span#result").html() + ", remove");
+        },
+        receive:function(event,ui){
+            $("span#result").html($("span#result").html() + ", receive");
+        },
+        activate:function(event,ui){
+            $("span#result").html($("span#result").html() + ", activate");
+        },
+        deactivate:function(event,ui){
+            $("span#result").html($("span#result").html() + ", daactivate");
+        }
+    })
+</script>
+</body>
+</html>

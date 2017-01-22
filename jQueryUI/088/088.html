@@ -1,0 +1,77 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片排序</title>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        h4{
+            font-family:arial;
+            font-size:12px;
+        }
+        .placeholder{
+            height:80px;
+        }
+    </style>
+</head>
+<body>
+<div id="titles">
+    <h4 class="p1">斯坦福极简经济学</h4>
+    <h4 class="p2">不可不知的经济真相</h4>
+    <h4 class="p3">引爆点</h4>
+    <h4 class="p4">思考，快与慢</h4>
+</div>
+
+<hr/>
+
+<h3>Match each cover with a book title!</h3>
+<div id="covers">
+    <img src="p1.jpg" height:80 class="p1"/>
+    <img src="p2.jpg" height:80 class="p2"/>
+    <img src="p3.jpg" height:80 class="p3"/>
+    <img src="p4.jpg" height:80 class="p4"/>
+</div>
+
+<hr/>
+
+<script type="text/javascript">
+    $("div#covers img").draggable({
+        revert:"invalid",
+        connectToSortable:"div#titles"
+    });
+
+    $("div#titles").sortable({
+        placeholder:"placeholder",
+        forcePlaceholderSize:true,
+        sort:function(event,ui){
+            ui.placeholder[0].height = ui.helper[0].height;
+            ui.placeholder[0].src = ui.helper[0].src;
+        },
+        receive:function(event,ui){
+            ui.item.draggable("destroy");
+        },
+        update:function(event,ui){
+            $("div#titles h4").each(function(index){
+                var titleClass = this.className;
+                var isSameClass = $(this).next().hasClass(titleClass);
+                var isOneImg = $(this).next().next().length == 0 || !$(this).next().next()[0].tagName.match(i);
+
+                if(isSameClass && isOneImg){
+                    $(this).css({
+                        "color":"red"
+                    })
+                }else{
+                    $(this).css({
+                        "color":"black"
+                    });
+                }
+            });
+        }
+    })
+</script>
+</body>
+</html>
