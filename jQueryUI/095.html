@@ -1,0 +1,31 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用toggleClass()方法</title>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+    <style type="text/css">
+        .class1{
+            border-width: 10px;
+            border-color:red;
+            background-color:black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<button onclick="toggle()"> Toggle </button>
+<p style="border-style:solid"> Paragraph 1 </p>
+<p style="border-style:solid"> Paragraph 2 </p>
+
+<script type="text/javascript">
+    function toggle(){
+        $("p").toggleClass("class1",1000);
+    };
+</script>
+</body>
+</html>

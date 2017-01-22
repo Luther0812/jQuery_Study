@@ -1,0 +1,26 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视觉特效 drop</title>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<img id="img1" src="p1.jpg" height="100"/>
+<br/>
+<img id="img2" src="p2.jpg" height="100"/>
+
+<script type="text/javascript">
+    $("#img1").effect("drop",{
+        mode:"hide",
+    },1000);
+    $("#img2").effect("drop",{
+        mode:"show",
+    },1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--jQueryUI-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视觉特效 highlight</title>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="../../jquery-ui-1.8.16/ui/minified/jquery-ui.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../jquery-ui-1.8.16/themes/base/minified/jquery-ui.min.css"/>
+</head>
+<body>
+<p id="p1"> Paragraph 1 </p>
+<p id="p2"> Paragraph 2 </p>
+
+<script type="text/javascript">
+    $("#p1").effect("highlight",{
+        mode:"hide",
+        color:"black"
+    },1000);
+    $("#p2").effect("highlight",{
+        mode:"show",
+        color:"black"
+    },1000);
+</script>
+</body>
+</html>
